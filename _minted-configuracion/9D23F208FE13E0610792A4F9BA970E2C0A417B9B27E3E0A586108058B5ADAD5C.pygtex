@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{c+c1}{//se da un flotante de la forma 0.321312 con}
+	\PYG{c+c1}{//el numero de digitos a convertir}
+	\PYG{c+c1}{//ejemplo}
+	\PYG{c+c1}{//in: 0.42344 3}
+	\PYG{c+c1}{//out: .001}
+	\PYG{n}{string} \PYG{n+nf}{FraccionBinaria}\PYG{p}{(}\PYG{k+kt}{float} \PYG{n}{FraccionDecimal}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{NumeroDeDigitos}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+		\PYG{n}{string} \PYG{n}{ans} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}.\PYGZdq{}}\PYG{p}{;}
+		\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{NumeroDeDigitos}\PYG{p}{;}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+		\PYG{p}{\PYGZob{}}
+			\PYG{n}{FraccionDecimal}\PYG{o}{*=}\PYG{l+m+mi}{2}\PYG{p}{;}
+			\PYG{k}{if}\PYG{p}{(}\PYG{n}{FraccionDecimal} \PYG{o}{\PYGZgt{}} \PYG{l+m+mf}{1.0}\PYG{p}{)}
+			\PYG{p}{\PYGZob{}}
+				\PYG{n}{FraccionDecimal}\PYG{o}{\PYGZhy{}=}\PYG{l+m+mf}{1.0}\PYG{p}{;}
+				\PYG{n}{ans}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{k}{else}
+			\PYG{p}{\PYGZob{}}
+				\PYG{n}{ans}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{return} \PYG{n}{ans}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
