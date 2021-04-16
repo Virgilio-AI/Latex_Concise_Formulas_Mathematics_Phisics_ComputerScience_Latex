@@ -1,0 +1,5 @@
+*.aux
+*.toc
+*.idx
+*.log
+*.out
