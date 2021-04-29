@@ -1,139 +1,175 @@
-\newpage
-\section{Ecuaciones Diferenciales}
-\subsection{Linealidad}
-$$ a_n(x) \frac{d^ny}{dx^n} + ... +  a_1(x) \frac{dy}{dx} + a_0(x)y = f(x)$$ 
-\subsection{ecuaciones homogeneas}
-prototipo de funcion homogenea $M(x,y)dx + N(x,y)dy = 0$ 
+\begin{section}{Ecuaciones Diferenciales}
+	\begin{subsection}{linearity}
+		$$ a_n(x) \frac{d^ny}{dx^n} + ... +  a_1(x) \frac{dy}{dx} + a_0(x)y = f(x)$$ 
+	\end{subsection}
+	\begin{subsection}{homogeneous ecuations}
+		prototipo de funcion homogenea $M(x,y)dx + N(x,y)dy = 0$ 
 
-cambio de variable $y=ux \; o \; x=uy \; , \; dy=xdu + udx $
-
-\subsubsection{Funcion homogenea grado n}
-$$f(tx,ty) = t^nf(x,y)$$
-\subsection{Ecuaciones diferenciales exactas}
-para ser exacta tiene que cumplir dos condiciones 
-\begin{enumerate}
-	\item $M(x,y)dx + N(x,y)dy = 0$
-	\item $\frac{\partial M}{\partial y} = \frac{\partial N }{\partial x}$
-\end{enumerate}
-para resolver toma en cuenta las siguientes dos cosas
-$$f(x,y) = \int M dx + g(y) = \int N dy + h(x) $$
-
-
-$$ \frac{ \partial F}{ \partial x} = M \; , \; \frac{ \partial F }{ \partial y} = N $$
-
-\subsection{Ecuacion de Bernoullu}
-aplica cuando la ecuacion diferencial tiene la siguiente forma:
-
-$$P_0(x)\frac{dy}{dx} + P(x)y = F(x)y^n$$
-
-se hace el cambio de variable $u = y^{1-n}$ y se obtiene una ecuacion lineal
-
-\subsection{Ecuacion de Ricatt}
- tiene la siguiente forma
-  $$y^{'} = Q(x)y^{2} + P(x)y + R(x)$$
-se hace la sustitucion $y=y_1 + u^{-1}$ 
-
-\subsection{Factor Integrante}
-aplica cuando hay una $f(x,y) $ tal que $f(x,y)(ED) = exacta$
-
-\begin{itemize}
-	\item si $ \frac{M_y - N_x}{N}$ es funcion solamente de x entonces $P(x) = \frac{M_y - N_x}{N}$
-		\begin{center}
-	$f(x) = e^{\int P(x)dx}$ es un factor de integracion
-		\end{center}
-
-	\item si $M_y - N_x = m\frac{N}{x} - n\frac{M}{y}$ entonces
-		\begin{center}
-			$f(x) = x^my^n$ es un factor de integracion
-		\end{center}
-
-\end{itemize}
-
-\subsection{Ecuaciones diferenciales lineales}
-$$\frac{dy}{dx} + P(x)y = q(x) $$
-$$u(x) = e^{\int P(x) dx }$$
-Sol =  $u(x)y = \int u(x)q(x)dx$
-
-
-\subsection{Reduccion De Orden}
-aplica cuando conoces una solucion de una ED Lineal homogenea de segundo orden
-
-$$y_2 = y_1 \int \frac{e^{- \int P(x) dx }}{y_1^{'}} dx $$
-
-$$y^{''} + P(x)y^{'} + q(x)y = 0$$
-\subsection{Ecuacion de coeficientes constantes}
-para poder resolver por este metodo tiene que ser una ecuacion lineal de coeficientes constantes
-de la forma $$y^{''}C_1 + y{'}C_2 + yC_3 = 0$$
-se hace la sustitucion $$y=e^{rx}$$ quedara una funcion cuadratica en terminos de r
-
-se puede llegar a usar la identidad de euler
-
-la solucion queda de la forma:
-$$y=C_1e^{r_1x} + C_2e^{r_2x}$$
-
-
-nota:
-si hay multiplicidad, ejemplo: $(r-1)^3 = 0 $
-$$y_h = e^x + xe^x + x^2e^x$$
-
-\subsection{variacion de parametros}
-
-tienen la forma $k_1y^{''} + k_2y^{'} + k_3y = f(x) $
-
-$$u_1 = - \int \frac{y_2f(x)}{W} dx \;\; \;\;\; u_2 =  \int \frac{y_1f(x)}{W} dx $$
-
-$$
-W=
-\begin{vmatrix}
-y_1 & y_2 \\
-	y_1^{'} & y_2^{'}
-\end{vmatrix}
-$$
-\begin{center}
-	siendo$y_h$ la solucion de la ecuacion homogenea asociada
-
-	$$ y_h = C_1y_1 + C_2y_2 $$
-
-	y siendo $y_p$ la solucion definitiva
-
-	$$ y_p = u_1y_1 + C_2y_2 $$
-
-\end{center}
-\subsection{Coeficientes indeterminados}
-\begin{center}
-	$r(x)$ = polinomio, exponencial, Seno, Coseno 
-\end{center}
-
-pasos:
-\begin{enumerate}
-	\item Calcular $y_n$ es decir
-		calcular la ecuacion homogenea relacionada, por coeficientes constantes
+		cambio de variable $y=ux \; o \; x=uy \; , \; dy=xdu + udx $
+	
+	\end{subsection}
+	\begin{subsection}{homogeneous function of grade n}
+		$$f(tx,ty) = t^nf(x,y)$$
+	
+	\end{subsection}
+	\begin{subsection}{Exact ED}
+		para ser exacta tiene que cumplir dos condiciones 
+	\begin{enumerate}
+		\item $M(x,y)dx + N(x,y)dy = 0$
+		\item $\frac{\partial M}{\partial y} = \frac{\partial N }{\partial x}$
+	\end{enumerate}
+		para resolver toma en cuenta las siguientes dos cosas
+		$$f(x,y) = \int M dx + g(y) = \int N dy + h(x) $$
+	
+	
+		$$ \frac{ \partial F}{ \partial x} = M \; , \; \frac{ \partial F }{ \partial y} = N $$
+	\end{subsection}
+	\begin{subsection}{Bernouully ecuation}
+	
+		aplica cuando la ecuacion diferencial tiene la siguiente forma:
 		
-	\item Encontrat $y_p$
+		$$P_0(x)\frac{dy}{dx} + P(x)y = F(x)y^n$$
+		
+		se hace el cambio de variable $u = y^{1-n}$ y se obtiene una ecuacion lineal
+	
+	
+	\end{subsection}
+	\begin{subsection}{Ricat Ecuation}
+		 tiene la siguiente forma
+		  $$y^{'} = Q(x)y^{2} + P(x)y + R(x)$$
+		se hace la sustitucion $y=y_1 + u^{-1}$ 
+	
+	\end{subsection}
+
+	\begin{subsection}{Cauchy Euler ecuation}
+		se usa para resolver una ecuacion de segundo grado
+	
+	
+		$$ax^2y'' + bxy' + cy = 0$$
+		\begin{center}
+		$y = x^r \;, \; x > 0 $
+		\end{center}
+	\end{subsection}
+	
+	\begin{subsection}{integrant factor}
+	aplica cuando hay una $f(x,y) $ tal que $f(x,y)(ED) = exacta$
+	
+	\begin{itemize}
+		\item si $ \frac{M_y - N_x}{N}$ es funcion solamente de x entonces $P(x) = \frac{M_y - N_x}{N}$
+			\begin{center}
+		$f(x) = e^{\int P(x)dx}$ es un factor de integracion
+			\end{center}
+	
+		\item si $M_y - N_x = m\frac{N}{x} - n\frac{M}{y}$ entonces
+			\begin{center}
+				$f(x) = x^my^n$ es un factor de integracion
+			\end{center}
+	
+	\end{itemize}
+	
+	\end{subsection}
+	\begin{subsection}{Linear differential equations}
+		$$\frac{dy}{dx} + P(x)y = q(x) $$
+		$$u(x) = e^{\int P(x) dx }$$
+		Sol =  $u(x)y = \int u(x)q(x)dx$
+	
+	\end{subsection}
+	\begin{subsection}{Order Reduction}
+		aplica cuando conoces una solucion de una ED Lineal homogenea de segundo orden
+		
+		$$y_2 = y_1 \int \frac{e^{- \int P(x) dx }}{y_1^{'}} dx $$
+		
+		$$y^{''} + P(x)y^{'} + q(x)y = 0$$
+	\end{subsection}
+	\begin{subsection}{Constant coeficients Ecuation}
+		para poder resolver por este metodo tiene que ser una ecuacion lineal de coeficientes constantes
+		de la forma $$y^{''}C_1 + y{'}C_2 + yC_3 = 0$$
+		se hace la sustitucion $$y=e^{rx}$$ quedara una funcion cuadratica en terminos de r
+		
+		se puede llegar a usar la identidad de euler
+		
+		la solucion queda de la forma:
+		$$y=C_1e^{r_1x} + C_2e^{r_2x}$$
+		
+		tambien puede servir:
+		$$r = a + bi $$
+		$$ y_1 = e^{ \alpha x } \cos (bx)$$
+		$$ y_2 = e^{ \alpha x } \sen (bx) $$
+		
+		
+		nota:
+		si hay multiplicidad, ejemplo: $(r-1)^3 = 0 $
+		$$y_h = e^x + xe^x + x^2e^x$$	
+	\end{subsection}
+	\begin{subsection}{parameter variation}
+		
+		tienen la forma $k_1y^{''} + k_2y^{'} + k_3y = f(x) $
+		
+		$$u_1 = - \int \frac{y_2f(x)}{W} dx \;\; \;\;\; u_2 =  \int \frac{y_1f(x)}{W} dx $$
+		
+		$$
+		W=
+		\begin{vmatrix}
+		y_1 & y_2 \\
+			y_1^{'} & y_2^{'}
+		\end{vmatrix}
+		$$
+		\begin{center}
+			siendo$y_h$ la solucion de la ecuacion homogenea asociada
+		
+			$$ y_h = C_1y_1 + C_2y_2 $$
+		
+			y siendo $y_p$ la solucion definitiva
+		
+			$$ y_p = u_1y_1 + C_2y_2 $$
+		
+		\end{center}
+	
+	\end{subsection}
+	\begin{subsection}{Indeterminate Coeficients}
+		\begin{center}
+			$r(x)$ = polinomio, exponencial, Seno, Coseno 
+		\end{center}
+		
+		pasos:
 		\begin{enumerate}
-			\item[caso 1] No hay funciones en comun con r(x)
-
-				nota: tomar en cuenta el teorema de superposicion de soluciones
-				si $$r(x) = x^3 + x +  10 \sen 8x$$
-				simplemente se suman los proposiciones
-				 $$y_p = Ax^3 + Bx^2 + Cx + D +  A \sen (8x) + B \cos (8x) $$
-				 y lo mismo aplica para la multiplicacion
-
+			\item Calcular $y_n$ es decir
+				calcular la ecuacion homogenea relacionada, por coeficientes constantes
+				
+			\item Encontrat $y_p$
 				\begin{enumerate}
-					\item[-] $y^{''} + C_1y^{'} + c_2y = x^3 + x$
-
-						proponer $\rightarrow y_p = Ax^3 + Bx^2 + Cx + D$
-					\item[-] $y^{''} + C_1y^{'} + c_2y = 10 \sen 8x$
-
-						proponer $\rightarrow y_p = A \sen (8x) + B \cos (8x) $
-					\item[-] $y^{''} + C_1y^{'} + c_2y = 12 e^{5x} $
-
-						proponer $\rightarrow y_p = Ae^{5x}$
+					\item[caso 1] No hay funciones en comun con r(x)
+		
+						nota: tomar en cuenta el teorema de superposicion de soluciones
+						si $$r(x) = x^3 + x +  10 \sen 8x$$
+						simplemente se suman los proposiciones
+						 $$y_p = Ax^3 + Bx^2 + Cx + D +  A \sen (8x) + B \cos (8x) $$
+						 y lo mismo aplica para la multiplicacion
+		
+						\begin{enumerate}
+							\item[-] $y^{''} + C_1y^{'} + c_2y = x^3 + x$
+		
+								proponer $\rightarrow y_p = Ax^3 + Bx^2 + Cx + D$
+							\item[-] $y^{''} + C_1y^{'} + c_2y = 10 \sen 8x$
+		
+								proponer $\rightarrow y_p = A \sen (8x) + B \cos (8x) $
+							\item[-] $y^{''} + C_1y^{'} + c_2y = 12 e^{5x} $
+		
+								proponer $\rightarrow y_p = Ae^{5x}$
+						\end{enumerate}
+					\item[caso 2] hay funciones que coinciden con r(x)
+		
+						simplemente multiplicar la funcion for x hasta que no hayas funciones en comun con x
+						pero tiene que ser la $x^n$ mas pequena posible
 				\end{enumerate}
-			\item[caso 2] hay funciones que coinciden con r(x)
-
-				simplemente multiplicar la funcion for x hasta que no hayas funciones en comun con x
-				pero tiene que ser la $x^n$ mas pequena posible
+		
 		\end{enumerate}
 
-\end{enumerate}
+	\end{subsection}
+
+\end{section}
+	
+
+
+
+
