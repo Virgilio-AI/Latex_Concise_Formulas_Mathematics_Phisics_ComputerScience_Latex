@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{c+c1}{\PYGZsh{}check file size}
+	du \PYGZhy{}sh .cache/
+	\PYG{c+c1}{\PYGZsh{}remove a file}
+	rm \PYGZhy{}rt .cache/
+	\PYG{c+c1}{\PYGZsh{}delete what you don\PYGZsq{}t need in .config file}
+\end{Verbatim}

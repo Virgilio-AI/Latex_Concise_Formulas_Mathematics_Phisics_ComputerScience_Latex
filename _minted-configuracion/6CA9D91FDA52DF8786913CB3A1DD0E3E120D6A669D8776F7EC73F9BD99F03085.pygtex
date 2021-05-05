@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+hwclock \PYGZhy{}\PYGZhy{}set \PYGZhy{}\PYGZhy{}date \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}04/32/2021 19:00:00\PYGZdq{}}
+hwclock \PYGZhy{}hctosys
+\end{Verbatim}

@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{c+c1}{\PYGZsh{}when entering an iso}
+	iwctl
+	\PYG{c+c1}{\PYGZsh{}then in the ui}
+
+	\PYG{c+c1}{\PYGZsh{}to list all available devices}
+	device list
+
+	\PYG{c+c1}{\PYGZsh{}to scan networks}
+	station \PYGZlt{}device\PYGZgt{} scan
+
+	\PYG{c+c1}{\PYGZsh{}to get newworks}
+	station \PYGZlt{}device\PYGZgt{} get\PYGZhy{}network
+
+	\PYG{c+c1}{\PYGZsh{}to connect to a network}
+	station \PYGZlt{}device\PYGZgt{} connect \PYG{l+s+s2}{\PYGZdq{}\PYGZlt{}name of network\PYGZgt{}\PYGZdq{}}
+
+	\PYG{c+c1}{\PYGZsh{}to check if the connection is staable}
+	ping \PYGZhy{}c s \PYG{l+m}{8}.8.8.8
+
+	\PYG{c+c1}{\PYGZsh{}don\PYGZsq{}t forget before rebooting the iso run}
+	pacman nmtui
+\end{Verbatim}

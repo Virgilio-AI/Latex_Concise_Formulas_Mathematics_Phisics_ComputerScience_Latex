@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{c+c1}{\PYGZsh{}check the failed systems}
+	systemctl \PYGZhy{}\PYGZhy{}failed
+	\PYG{c+c1}{\PYGZsh{}check the systemd journal}
+	sudo journalctl \PYGZhy{}p \PYG{l+m}{3}\PYGZhy{}xb
+	\PYG{c+c1}{\PYGZsh{}if the system doesn\PYGZsq{}t boots then ctrl+alt+shift then timeshift \PYGZhy{}restore}
+	\PYG{c+c1}{\PYGZsh{}then update mirrors}
+	\PYG{c+c1}{\PYGZsh{}clar chache}
+
+	\PYG{c+c1}{\PYGZsh{}then to update the whole system use:}
+	sudo pacman \PYGZhy{}Syyu
+	\PYG{c+c1}{\PYGZsh{}to check system updates}
+	sudo pacman \PYGZhy{}Syu
+	\PYG{c+c1}{\PYGZsh{}if you wan\PYGZsq{}t to remove all packages in the drive use}
+	sudo pacman \PYGZhy{}Scc
+	\PYG{c+c1}{\PYGZsh{}remove all unwanted dependencies}
+	paru \PYGZhy{}Yc
+	\PYG{c+c1}{\PYGZsh{}remove orphan packages}
+	sudo pacman \PYGZhy{}Rns \PYG{l+s+se}{\PYGZbs{}\PYGZdl{}}\PYG{o}{(}pacman \PYGZhy{} Qdtq\PYG{o}{)}
+	\PYG{c+c1}{\PYGZsh{}sudo pacman \PYGZhy{}Syyy Syncrhonise data use \PYGZdq{}mirror1\PYGZdq{}}
+\end{Verbatim}

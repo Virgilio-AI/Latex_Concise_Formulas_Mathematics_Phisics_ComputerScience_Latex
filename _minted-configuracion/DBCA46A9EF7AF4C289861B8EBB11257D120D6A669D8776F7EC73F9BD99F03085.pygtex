@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+sudo systemct \PYG{n+nb}{enable} cups
+sudo systemctl start cups
+localhost:631
+
+lp \PYGZhy{}d HP\PYGZus{}Officejey\PYGZus{}Pro\PYGZus{}8600\PYG{o}{]}
+\end{Verbatim}

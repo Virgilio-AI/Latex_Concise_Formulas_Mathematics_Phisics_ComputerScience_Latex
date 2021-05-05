@@ -1,13 +1,19 @@
 \newpage
-\section{Calculo numerico}
-\subsection{Polinomio de taylor}
+\begin{section}{Numerical Calculus}
+\begin{subsection}{Taylor Polinomial}
 $$f(x) \approx f(x_0) + f^{'}(x_0)(x-x_0) + \frac{f^{''}(x-x_0)^2}{2!}$$
 
 $$= \sum\limits_{i=0}^{n} \frac{f^{i}(x_0)(x-x_0)^i } {i!} \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
-\subsection{Newton Raphson}
+
+\end{subsection}
+\begin{subsection}{Newton Raphson}
 $$ P_{n+1} = P_n - \frac{f(P_0)}{f^{'}(P_0)} $$
 
-\subsection{complemento a uno}
+\end{subsection}
+\begin{subsection}{Complement to one}
+
+\end{subsection}
+\begin{subsection}{complement to two }
 se cambian 1 por ceros y viceversa
 \subsection{complemento a dos}
 de derecha a izquierda y apartir del primer 1 encontrado sin incluirlo se 
@@ -20,7 +26,8 @@ $$(-1) \times (1+mantisa) \times {2^{expo - maxExpo} } $$
 $$(-1) \times (1+0.75) \times 2^{124-127} $$
 $$ = -0.21875$$
 
-\subsection{convertir de decimal a punto flotante}
+\end{subsection}
+\begin{subsection}{convert decimal to float}
 Ejemplo:
 $$171.25 = 10101011,01$$
 
@@ -36,7 +43,9 @@ $$134_10 = 10000110_2$$ y la parte decimal es la mantiza, que queda igual
 $$010101101$$
 
 \newpage
-\subsection{Convertir de decimal fraccionario a punto flotante}
+
+\end{subsection}
+\begin{subsection}{Convert decimal fraction to float}
 para convertir de fraccionario a binario primero se convierte la parte entera y la parte fraccionaria se convierte usando el siguiente codigo
 
 Codigo:
@@ -67,10 +76,14 @@ Codigo:
 	}
 \end{minted}
 
-\subsection{Punto Fijo}
+\end{subsection}
+\begin{subsection}{Fixed point iteration}
 de una ecuacion se despeja x y se substituye, tomando el resultado anterior
 empezando desde una x arbitraria
-\subsection{Diferencias Divididas}
+
+\end{subsection}
+\newpage
+\begin{subsection}{Divided differences}
 $$f[x_0,x_1] = \frac{f(x_1)-f(x_0)}{x_1-x_0}$$
 $$f[x_0,x_1,x_2] = \frac{f(x_1,x_2)-f(x_0,x_1)}{x_2-x_0}$$
 $$ f[x_0,x_1,x_2,x_3] = \frac{x_2,x_3) - f(x_0,x_1)}{x_3-x_0}$$
@@ -89,7 +102,10 @@ $$P_n = a_0 + a_1(x-x_0) + a_2(x-x_0)(x-x_1) + ... + a_n(x-x_0) \times ... \time
  \hline
 \end{tabular}
 \end{center}
-\subsection{Polinomio de lagrange}
+
+
+\end{subsection}
+\begin{subsection}{Lagrange Polinomial}
 $$P_n(x) = \sum_{i=0}^{n} L_i(x)f(x_i)$$
 
 $$
@@ -97,6 +113,12 @@ L_i(x) = \prod_{\substack{j=0 \\
 	j \neq i}}^{n}
 	\frac{(x-x_j)}{(x_i-x_j)}
 $$
+
+\end{subsection}
+
+\end{section}
+
+
 
 
 

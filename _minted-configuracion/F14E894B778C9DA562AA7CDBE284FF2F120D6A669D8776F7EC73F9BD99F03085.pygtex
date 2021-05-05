@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{c+c1}{\PYGZsh{}to mount a usb stick}
+	mount /dev/sdb1 /mnt/\PYGZlt{}destination folder\PYGZgt{}
+	\PYG{c+c1}{\PYGZsh{}to unmount a sub stick}
+	umount /dev/sdb1
+\end{Verbatim}

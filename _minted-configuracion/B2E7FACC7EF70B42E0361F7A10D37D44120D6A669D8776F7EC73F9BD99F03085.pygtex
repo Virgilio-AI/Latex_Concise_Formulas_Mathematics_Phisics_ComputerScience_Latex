@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	 \PYG{c+c1}{\PYGZsh{}MODKEY + shift + q to restart X server}
+	 startx \PYG{c+c1}{\PYGZsh{} to start the X server}
+\end{Verbatim}

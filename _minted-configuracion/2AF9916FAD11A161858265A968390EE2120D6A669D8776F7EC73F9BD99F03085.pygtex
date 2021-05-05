@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{c+c1}{\PYGZsh{}to mount and android device}
+	simple\PYGZhy{}mtpfs \PYGZhy{}\PYGZhy{}device \PYG{l+m}{1} tablet/
+
+	\PYG{c+c1}{\PYGZsh{}to unmount an android device}
+	fusermount \PYGZhy{}u /tablet
+\end{Verbatim}
