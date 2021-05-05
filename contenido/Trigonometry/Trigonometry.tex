@@ -1,22 +1,98 @@
 \newpage
 \begin{section}{Trigonometry}
-\begin{subsection}{Basic Identities}
-$$ \cos (\alpha) = \frac{1}{2} [\cos (\alpha - \beta) + \cos (\alpha + \beta) ] $$
-$$\sin (A \pm B) = \sin A \cos B \pm \cos A \sin B$$
-$$\cos (A \pm B) = \cos A \cos B \mp \sin A \sin B $$
-$$\sinh (x) = \frac{e^x - e ^ {-x} } {2}$$
-$$\cosh (x) = \frac{e^{X} + e^{-x} } {2} $$
-$$\sin (x) \cos (y) = \frac{1}{2}[\sin (x+y) + \sin (x-y) ] $$
-
-\end{subsection}
-\begin{subsection}{Double Angle}
-	$$\sin(2 \theta) = 2 \sin ( \theta ) cos (\theta) $$
-	$$\cos(2 \theta) = \cos^2 \theta - \sin^2 \theta $$
-	$$\cos(2 \theta) = 2 cos^2 \theta - 1 $$
+	\begin{subsection}{Basic Identities}
+		$$ \cos (\alpha) = \frac{1}{2} [\cos (\alpha - \beta) + \cos (\alpha + \beta) ] $$
+		$$\sin (A \pm B) = \sin A \cos B \pm \cos A \sin B$$
+		$$\cos (A \pm B) = \cos A \cos B \mp \sin A \sin B $$
+		$$\sinh (x) = \frac{e^x - e ^ {-x} } {2}$$
+		$$\cosh (x) = \frac{e^{X} + e^{-x} } {2} $$
+		$$\sin (x) \cos (y) = \frac{1}{2}[\sin (x+y) + \sin (x-y) ] $$
 	
+	\end{subsection}
+	\begin{subsection}{Double Angle}
+		$$\sin(2 \theta) = 2 \sin ( \theta ) cos (\theta) $$
+		$$\cos(2 \theta) = \cos^2 \theta - \sin^2 \theta $$
+		$$\cos(2 \theta) = 2 cos^2 \theta - 1 $$
+		
+	
+	\end{subsection}
+	\begin{subsection}{Sin in terms of e}
+		$$\sin (x) = \frac{e^{ix} - e^{-ix} } {-2i}$$
+		$$\cos (x) = \frac{e^{ix} - e^{-ix} } {2}$$
+	\end{subsection}
+	\begin{subsection}{hyperbolic functions}
+		$$\cosh^2 (x) - \senh^2 (x) = 1 $$
+		$$\sech^2 (x) + \tan^2 (x) = 1 $$
+		$$\senh (x \pm y ) = \sinh (x) \cosh (y) \pm \cosh (x) \sinh (x)$$
+		$$\cosh (x \pm y ) = \cosh (x) \cosh (y) \pm \sinh (x) \sinh (y)$$
+		
+	\end{subsection}
+	\begin{subsection}{square reduction}
+		$$\sinh^2 (x) = \frac{\cosh (x) - 1}{2}$$
+		$$\cosh^2 (x) = \frac{\cosh (x) + 1}{2}$$
+	\end{subsection}
+	\begin{subsection}{Polar Coordinates}
+		$$r\cos(u) = x , \; \; r \sin (u) = y $$
+		$$r^2 = x^2 + y^2 $$ 
 
-\end{subsection}
-\end{section}
+		The symetry around the x axis:
+
+		$$y-r = f( \theta ) = f( -\theta ) $$
+		
+		The symetry around the y axis:
+
+		$$r = f( \pi - \theta ) $$
+
+		Symetry around $\theta = \frac{\pi}{2}$
+		$$f(\pi - \theta) = f(\theta) $$
+
+		Symetry around the origin
+		$$f(\pi + \theta) = - f(\theta)$$
+
+		Find the type of graphic the next function is gonna make:
+
+		$$r = \pm a + b \sin (u) $$
+		
+		\begin{tabular}{ |m{5cm}|m{5cm}|m{5cm}|  }
+		\hline
+			$a<b$\newline cola &     $a = b$ \newline corazon pasa origen &       $a > b$ \newline sin cola
+		%\hline
+		\end{tabular}
+
+		\newpage
+ 		Roses:
+		$$ r = a \sin (n \theta ) , \; \; r = \cos ( n \theta ) $$
+		\begin{enumerate}
+			\item number of petals
+	\begin{minted}{c}
+		if(n %2 == 0)
+		{
+			return 2n;
+		}
+		else
+		{
+			return n;
+		}
+	\end{minted}
+			\item 
+				$angle = \frac{360^{\o}}{\# petals} $ 
+			\item 
+				first petal
+	\begin{minted}{c}
+		if(cos(x))
+		{
+			return "x axis";
+		}
+		else
+		{
+			return "theta = \pi / 2n ";
+		}
+	\end{minted}
+		\end{enumerate}
+
+	\end{subsection}
+
+	\end{section}
 
 
 

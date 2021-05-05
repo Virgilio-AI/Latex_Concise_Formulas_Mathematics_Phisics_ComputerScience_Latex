@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{k}{if}\PYG{p}{(}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{x}\PYG{p}{))}
+		\PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{l+s}{\PYGZdq{}x axis\PYGZdq{}}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{else}
+		\PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{l+s}{\PYGZdq{}theta = \PYGZbs{}pi / 2n \PYGZdq{}}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
