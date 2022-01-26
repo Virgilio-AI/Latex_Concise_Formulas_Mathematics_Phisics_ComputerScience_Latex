@@ -121,6 +121,26 @@
 			fusermount -u /tablet
 
 		\end{minted}
+	\end{subsection}
+	\newpage
+	\begin{subsection}{import export passwords from pass}
+		export passwords:
+		\begin{minted}{sh}
+			# to list first the gpg keys
+			gpg --list-secret-keys --keyid-format LONG
+		\end{minted}
+		\includegraphics{img_ArchLinux/publicKeyImage.png}\caption{public key}
+		\begin{minted}{sh}
+			# to create the export files
+			# save this files in a usb and use it later
+			gpg --output MY_FILENAME_public.gpg --armor --export GPG_PUB_KEY
+			gpg --output MY_FILENAME_secret.gpg --armor --export-secret-key GPG_PUB_KEY
+			# in other pc import the gpg keys
+			gpg --import MY_FILENAME_pub.gpg
+			gpg --allow-secret-key-import --import MY_FILENAME_sec.gpg
+			# now copy the .password-store folder from the main machine and paste it into the new machine
+		\end{minted}
+
 
 	\end{subsection}
 
