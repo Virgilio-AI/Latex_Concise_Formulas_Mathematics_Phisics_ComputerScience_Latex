@@ -144,4 +144,26 @@
 
 	\end{subsection}
 
+	\begin{section}{Install python version}
+		\begin{minted}{sh}
+	# download the python version you need from https://www.python.org/downloads/source/
+	# unpack in the .local/src/pythonversions/pythonVersion.tgz
+	tar zxvf pythonVersion.tgz
+	cd pythonVersion
+	# Install the python version
+	./configure
+	make
+	sudo make install
+	make clean
+	# check python version
+	python[python_version] --version
+	# create a python environment using that python version
+	python[python_version] -m venv venv/
+	# source the environment
+	source venv/bin/activate
+	# for deactivating
+	deactivate
+		\end{minted}
+	\end{section}
+
 \end{section}
