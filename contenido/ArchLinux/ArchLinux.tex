@@ -466,6 +466,141 @@ sudo service nginx restart
 \end{minted}
 \end{subsection}
 
+\begin{subsection}{use custom domain name for django}
+	\begin{minted}{sh}
+		# search for a service called route 53
+		# create hosted zone with the domain name
+
+		# create record
+		simple routing -> copy the ipv4 address
+
+		click define simple record
+
+		# create an other record
+
+		simple routing -> 
+		# in blog type www
+		# record type CNAME
+		# in the big box below CNAME
+		example.com
+		define record
+
+
+		# now in hosted zone datails see the name servers
+
+		# copy the name servers into namecheap
+
+		# in namecheap manage the domain and change to custom dns
+		# paste the dns's
+
+
+		# now connect to the instance 
+		cd /etc/nginx/sites-available/
+		sudo vim django.conf
+		# update the domain name
+		# exit
+		sudo service nginx restart
+
+
+	\end{minted}
+\end{subsection}
+
+\begin{subsection}{enable https}
+	\begin{minted}{sh}
+		# search for certificate manager
+		# provision certificates
+		# request public certificate
+		# place domain name
+		example.com
+		# use dns validation
+		# confirm and request
+
+		## the request will be in progress
+
+		# open the dns menu
+
+		## add the CNAME to the dns configuration of the domain
+
+		# create record in route 53
+		# press continue
+
+		## validation not complete message
+
+		## in other tab open the route 53 console
+
+		## in the certificates tab reload table
+
+		## it will appear ineligible 
+
+		## create tab and select ec2 instance
+		click Load balances
+
+		# create load balancer
+
+		name: example.com
+
+		click add listener -> https
+
+		# check all availability zones 
+
+		# next configure security settings
+
+		# choose a certificate from ACm
+
+		# configure security groups
+
+		# change to the launch wizard of your instance
+
+		# next configure routing
+
+		# change the name to anything-tg
+
+		#select the instance and add to register
+
+		# select the instance now in the upper table
+
+		# next review
+
+		# create
+
+
+		# once created copy the dns name abd add it as a record
+
+		# open the route 53 tab
+
+		# create recod -> simple routing -> define simple record -> 
+
+		# choose endpoint Ip adress or another value depending the record
+
+		# in the big box paste the newly copied dns
+
+		# create record
+
+		# if you get an error edit the record row that TTL = 300
+
+		# change to Ip adress or another ... to Alias aplication and clasic balancer
+
+		# region asia pacific mumbai
+
+		# choose the only load balancer available 
+
+		# wait some minutes and it should be done
+
+	\end{minted}
+\end{subsection}
+
+\begin{subsection}{add https support}
+	\begin{minted}{sh}
+		# first on aws add to the security group (generally launch wizar n) https support for all(0::/,0.0.0.0/0)
+
+		# now inside the server just add
+		sudo apt install certbot python3-certbot-nginx
+		sudo certbot --nginx -d yoursite.yourExtension -d www.yousite.yourExtension
+	\end{minted}
+
+
+\end{subsection}
+
 \end{section}
 
 
