@@ -457,15 +457,26 @@ python manage.py migrate
 sudo supervisorctl reload
 
 sudo service nginx restart
-
-
-
-
-
-
 \end{minted}
 \end{subsection}
 
+
+\begin{subsection}{use nvim for graphical programs}
+	\begin{minted}{sh}
+		# first you have to make it the default
+		# in .zshrc put
+		VISUAL=nvim
+		EDITOR=nvim
+
+		# then change the nvim.desktop in /usr/share/applications/nvim.desktop
+		and place 
+		EXEC=nvimWrapper
+		TRY=nvimWrapper %F
+
+		# now create the wrapper in the bin like
+		st -e sh -c "nvim \$1"
+	\end{minted}
+\end{subsection}
 \end{section}
 
 
