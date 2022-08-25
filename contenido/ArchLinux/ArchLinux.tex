@@ -131,17 +131,49 @@
 		\end{minted}
 		\includegraphics{img_ArchLinux/publicKeyImage.png}
 		\begin{minted}{sh}
-			# to create the export files
-			# save this files in a usb and use it later
-			gpg --output MY_FILENAME_public.gpg --armor --export GPG_PUB_KEY
-			gpg --output MY_FILENAME_secret.gpg --armor --export-secret-key GPG_PUB_KEY
-			# in other pc import the gpg keys
-			gpg --import MY_FILENAME_pub.gpg
-			gpg --allow-secret-key-import --import MY_FILENAME_sec.gpg
-			# now copy the .password-store folder from the main machine and paste it into the new machine
+			# list key files
+			tree ~/.gnupg
+			# list the keys in long format
+			gpg --list-secret-keys --keyid-format LONG
 		\end{minted}
+		\includegraphics{img_ArchLinux/list_keys_image.png}
+		\caption{list keys command output}
+	\begin{itemize}
+		\item
+			The “sec” (secret) line shows the number of bits in the encryption (4096 in this example), the key ID, the date the key was created, and “[SC].” The “S” means the key can be used for digital signatures and the “C” means it can be used for certification.
+
+		\item 
+			The next line is the key fingerprint.
+		\item
+			The “uid” line holds the ID of the key’s owner.
+		\item
+			The “ssb” line shows the secret subkey, when it was created, and “E.” The “E” indicates it can be used for encryption.
+	\end{itemize}
+
+	\begin{minted}{sh}
+		# export public key
+		gpg --export --export-options backup --output public.gpg
+		# if you want to back up only the ones associated to one identity use
+		gpg --export --export-options backup --output public.gpg dave@madeupdomain.com
+		# export the secret keys
+		gpg --export-secret-keys --export-options backup --output private.gpg
+		# export the secret keys for one identity
+		gpg --export-secret-keys --export-options backup --output private.gpg dave@madeupdomain.com
+		# export ownerwhip trust
+		gpg --export-ownertrust > trust.gpg
+		
+
+		# in a new computer
+		# import public keys
+		gpg --import public.gpg
+		# import private keys
+		gpg --import private.gpg
+		# import ownerwhip trust
+		gpg --import-ownertrust trust.gpg
 
 
+		# and that's it!
+	\end{minted}
 	\end{subsection}
 
 	\begin{section}{Install python version}
@@ -188,6 +220,56 @@
 
 
 \end{subsection}
+\begin{section}{deploy multiple applications to ec2 ubuntu instance}
+	\begin{minted}{sh}
+	sudo apt install nginx
+	sudo apt install neovim
+	sudo mkdir -p /var/www/domainName.extension/html
+	sudo chown -R \$USER:\$USER /var/www/domainName.extension/html
+	sudo chmod -R 755 /var/www/domainName.extension
+
+	
+	# custom edit the html
+	sudo nvim /var/www/domainName.extension/html/index.html
+
+
+	# edit the configuration
+	sudo nvim /etc/nginx/sites-available/domainName.extension
+
+	########## /etc/nginx/sites-available/domainName.extension ######
+	server \{
+		listen 80;
+		listen [::]:80;
+
+		root /var/www/domainName.extension/html;
+		index index.html index.htm index.nginx-debian.html;
+
+		server_name domainName.extension www.domainName.extension;
+
+		location / \{
+			try_files \$uri \$uri/ =404;
+		}
+
+	}
+	##########  ############
+
+	sudo ln -s /etc/nginx/sites-available/domainName.extension /etc/nginx/sites-enabled/ 
+	
+	# edit the configuration
+	sudo nvim /etc/nginx.conf
+	# uncomment the server_names_hash_bucket_size 64;
+	
+	# test the config
+	sudo nginx -t
+	
+	# reestart the daemon
+	systemctl restart nginx
+
+
+
+	\end{minted}
+
+\end{section}
 \begin{subsection}{deploy python django aplication aws}
 \begin{minted}{sh}
 
